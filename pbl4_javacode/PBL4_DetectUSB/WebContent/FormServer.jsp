@@ -48,11 +48,12 @@
         <input type="button" name="Create" value="Create" onclick="window.location.href = '/Create.html'">
         <input type="button" name="Delete" value="Delete" onclick="click()">
       </div><br>
-    <table id="table">
+      form
+    <table id="table" >
       <thead>
         <tr>
           <th data-field="state" data-checkbox="true">Pick up</th>
-          <th data-field="name-device" data-filter-control="input" data-sortable="true">Name of device</th>
+          <th data-field="name-device" data-filter-control="input" data-sortable="true" >Name of device</th>
           <th data-field="IP" data-filter-control="select" data-sortable="true">IP</th>
           <th data-field="time" data-filter-control="select" data-sortable="true">Time</th>
         </tr>
@@ -61,8 +62,8 @@
       <%for(Clients i: listClient){ %>
         <tr>
           <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-          <td><%= i.getNameClient() %></td>
-          <td><%= i.getIdClient() %></td>
+          <td><a href = "GotoViewDeviceServlet?nameclient=<%=i.getNameClient()%>"><%=i.getNameClient()%></a></td>
+          <td><%= 123456%></td>
           <td><%= i.getLastTimeOnline().toString() %></td>
         </tr>
         <%} %>
